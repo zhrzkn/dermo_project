@@ -1,0 +1,21 @@
+import cv2 as cv
+from matplotlib import pyplot as plt
+import numpy as np
+img = cv2.imread("dosya_adi.jpg", 0)                   //foto dosyasının adını yazıp .'dan sonra türünü yazacaksın (.jpg  .png)
+plt.hist(img.ravel(), 256, [0, 256])
+equ = cv.equalizeHist(img)
+cv.imshow("histogram", equ)
+plt.show()
+cv2.imwrite("yeni_dosya.png", img)                   //eşikleme işlemi uyguladığın fotoyu kaydet
+cv.waitKey(0)
+cv.destroyAllWindows()
+
+
+import cv2
+import numpy as np
+img = cv2.imread("dosya_adi.jpg", 0)                   //foto dosyasının adını yazıp .'dan sonra türünü yazacaksın (.jpg  .png)
+equ = cv2.equalizeHist(img)
+cv2.imshow("pencere", equ)
+cv2.imwrite("yeni_dosya.png", equ)                   //eşikleme işlemi uyguladığın fotoyu kaydet
+cv2.waitKey(0)
+cv2.destroyAllWindows()
