@@ -3,14 +3,13 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 img = cv2.imread("152.png")                                  //foto dosyasının adını yazıp .'dan sonra türünü yazacaksın (.jpg  .png)
-equ = cv2.equalizeHist(img)
 b, g, r = cv2.split(img)
 
 plt.hist(b.ravel(), 256, [0, 256])
 plt.hist(g.ravel(), 256, [0, 256])
 plt.hist(r.ravel(), 256, [0, 256])
 plt.show()
-cv2.imwrite("histogram_152.png", r)                             //histogram işlemi uyguladığın fotoyu kayd
+cv2.imwrite("histogram_152.png", r)                             //histogram işlemi uyguladığın fotoyu kaydet
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
